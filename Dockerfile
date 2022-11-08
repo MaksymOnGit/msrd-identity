@@ -8,7 +8,7 @@ WORKDIR /src
 COPY ["MSRD.Identity/MSRD.Identity.csproj", "MSRD.Identity/"]
 RUN dotnet restore "MSRD.Identity/MSRD.Identity.csproj"
 COPY . .
-WORKDIR "/src/MSRD.Identity/MSRD.Identity"
+WORKDIR "/src/MSRD.Identity"
 RUN dotnet build "MSRD.Identity.csproj" -c Release -o /app/build
 
 FROM build AS publish
