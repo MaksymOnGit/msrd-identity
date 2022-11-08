@@ -5,8 +5,8 @@ EXPOSE 443
 
 FROM mcr.microsoft.com/dotnet/sdk:6.0 AS build
 WORKDIR /src
-COPY ["MSRD.Identity/MSRD.Identity/MSRD.Identity.csproj", "MSRD.Identity/MSRD.Identity/"]
-RUN dotnet restore "MSRD.Identity/MSRD.Identity/MSRD.Identity.csproj"
+COPY ["MSRD.Identity/MSRD.Identity.csproj", "MSRD.Identity/"]
+RUN dotnet restore "MSRD.Identity/MSRD.Identity.csproj"
 COPY . .
 WORKDIR "/src/MSRD.Identity/MSRD.Identity"
 RUN dotnet build "MSRD.Identity.csproj" -c Release -o /app/build
