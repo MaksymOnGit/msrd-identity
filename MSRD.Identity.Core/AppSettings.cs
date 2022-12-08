@@ -42,11 +42,11 @@ namespace MSRD.Identity.Core
             RuleFor(x => x.SmtpSettings).NotNull().DependentRules(() =>
             {
                 RuleFor(x => x.SmtpSettings!.SmtpHost).NotEmpty();
-                RuleFor(x => x.SmtpSettings!.SmtpLogin).NotEmpty();
-                RuleFor(x => x.SmtpSettings!.SmtpPassword).NotEmpty();
+                //RuleFor(x => x.SmtpSettings!.SmtpLogin).NotEmpty();
+                //RuleFor(x => x.SmtpSettings!.SmtpPassword).NotEmpty();
                 RuleFor(x => x.SmtpSettings!.SmtpPort).NotEmpty();
                 RuleFor(x => x.SmtpSettings!.SmtpSecureSocketOption).NotEmpty().IsEnumName(typeof(SecureSocketOptions));
-                RuleFor(x => x.SmtpSettings!.SmtpSenderAddress).NotEmpty().EmailAddress();
+                //RuleFor(x => x.SmtpSettings!.SmtpSenderAddress).NotEmpty().EmailAddress();
                 RuleFor(x => x.SmtpSettings!.SmtpSenderName).NotEmpty();
             });
 
